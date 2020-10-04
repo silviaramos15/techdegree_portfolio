@@ -1,0 +1,588 @@
+/* VARIABLES */
+:root {
+    --font-size-xs-factor: 14px;
+    --font-size-s-factor: 18px; 
+    --font-size-m-factor: 24px; 
+
+    --color-bg-primary:  #ff8c00;
+    --color-bg-secondary: #fff;
+    --color-bf-third: silver;
+
+    --font-family-main: 'Baloo Tammudu 2', cursive;
+    --font-family-secondary: 'Roboto', sans-serif; 
+    --font-family-small: 'Kalam', cursive;
+}
+
+
+
+/* GENERAL STYLING */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+}
+img {
+    max-width: 100%;
+}
+/* TYPOGRAPHY */
+h1,
+h5,
+h3 {
+    font-family: var(--font-family-main);
+}
+h3 {
+    width: 3.125em; /*50px*/
+    align-self: left;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 0 2px 3px;
+     
+}
+code {
+    font-family: var(--font-family-small);
+    font-size: 12px;
+}
+.code {
+    font-family: var(--font-family-small);
+}
+p {
+    font-size: var(--font-size-xs-factor);
+}
+
+/* PANELS */
+.div {
+    height: 90vh;
+    
+
+}
+.panel_1 div,
+.panel_3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+   
+    
+}
+
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .panel_1 {
+      background-color:  var(--color-bg-primary);
+     
+  }
+  .panel_2 {
+      background-color: var(--color-bg-secondary);
+     
+     
+  }
+  .panel_3 {
+      background-color: var(--color-bf-third);
+     
+  }
+  .panel div{
+      cursor: pointer;
+  }
+/* ----------- ACTIVE TRANSITIONS */
+.active {
+    flex: 4;
+    transition: .4s ease-in-out;
+   
+   
+}
+
+h3 {
+   transform-origin: 0 0;
+    transform: rotate(-90deg); 
+}
+.active h3{
+    transform-origin: 0 0;
+    transform: rotate(0deg);
+    margin-left: .357em /*5px*/
+}
+.active div,
+.active .sections {
+    display: flex;
+   
+}
+.active div {
+    cursor: auto;
+}
+.sections {
+    display: none;
+    width: 95%;
+}
+/* MAIN SECTION */
+     /* ----IMAGES */
+
+.icons {
+  
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* margin-top: 3.125em;50px */
+}
+
+.graphic img{
+    width: 16px !important; 
+    margin-top: 20px;
+    display: block;
+    margin-left: 50%;  
+    transition: .5s ease-in-out; 
+}
+    /* ------ links effects */
+    .graphic a:hover {
+        transform: scale(1.1);
+        filter: brightness(1.1);
+        
+    }
+
+
+/* ----CONTAINER */
+    /* -----WHITE CONTAINER */
+   .clearfix {
+       content: "";
+       display: table;
+       clear: both;
+   }
+.main {
+    margin-left: -11%;;
+  overflow: visible;
+   width: 100%;
+   height: 90vh;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;;
+}
+.titles {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+   height: 10%; 
+    transform: rotate(-90deg) translateY(-40px);
+}
+.titles h4 {
+font-size: 32px;
+}
+
+
+
+
+    /* ----- DECOR */
+    
+.cuadro {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-bf-third);
+    position: relative;
+    top: 10%;
+    left: 70%;
+    z-index: 2;
+    animation: rotate 30s linear infinite;
+}
+.cuadro::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 5px solid var(--color-bg-primary);
+    position: relative;
+    top: -30%;
+    left: 20px;
+   
+}
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+ /* -----ORANGE CONTAINER */
+.about {
+    width: 95%;
+   position: relative;
+   margin: 0 auto;
+   
+   
+}
+
+.about article {
+    width: 80%;
+    margin: 0 auto;
+   
+   
+}
+.intro h4 span{
+    border-bottom: 1px solid black;
+}
+.intro p span {
+font-style: italic;
+}
+
+.skills {
+    display: none;
+    width: 90%;
+}
+.skills p,
+.skills h4 {
+    margin-left: 15px;
+}
+.skills p span {
+    font-style: italic;
+}
+    /* ----- icons */
+    .right {
+        width: 16px;
+        display: inline-block;
+        position: absolute;
+        right: 5px;;
+        top: 50%;
+        cursor: pointer;
+        transition: .9s ease-in-out;
+    }
+    
+    .left {
+        width: 16px;
+        display: none;
+        position: absolute;
+        left: 5px;;
+        top: 53%;
+        cursor: pointer; 
+        transition: .9s ease-in-out;
+    }
+    .right:hover,
+    .left:hover {
+        transform: scale(1.3);
+    }
+    .skills_icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .skill img {
+        width: 16px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+    .skill img:hover {
+        transform: scale(1.2);
+    }
+    .skill_title {
+        color: var(--color-bg-primary);
+        font-family: var(--font-family-main);
+    }
+
+/* ----FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+
+}
+
+
+
+
+/* MODAL WINDOW */
+
+.overlay,
+.overlay_form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+.modal,
+.modal_form {
+    width: 375px;
+    margin: 15% auto auto;
+    text-align: center;
+    position: relative;
+    background-color:var(--color-bg-secondary);
+    border: 3px solid var(--color-bf-third);
+    border-radius: 5px;
+    padding: 30px 20px;
+    z-index: 2;
+    
+}
+
+.hidden,
+.hidden_form {
+    display: none;
+}
+.modal-close,
+.form-close {
+    position: absolute;
+    right: 2px;
+    top: 5px;
+}
+button {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-bg-secondary);
+    color: var(--color-bg-secondary);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+button:hover {
+    filter: brightness(1.2);
+    
+}
+/* Form styling */
+.h2Form {
+    color: var(--color-bg-primary);
+    font-family: var(--font-family-main);
+}
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.flex-form > input,
+textarea {
+    margin-top: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+::placeholder {
+    font-size: 10px;
+    text-align: right;
+    padding-right: 15px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    transition: ease-in-out .5s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 1px solid var(--color-bg-primary);
+}
+form label {
+    font-size: var(--font-size-xs-factor);
+    text-align: left;
+}
+form button {
+    width: 25%;
+    border-radius: 5px;
+}
+
+/* SECTION 3: GREY PLANEL */
+.portfolio {
+    overflow-y: scroll;
+    width: 95%;
+    height: 80vh;
+    margin: 0 auto;
+}
+.portfolio_header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px !important;
+}
+    .portfolio_header button {
+        width: 32%;
+        font-size: 12px;
+    }
+    .portfolio_flex {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .portfolio_images {
+        width: 80%;
+       height: 30%;
+        margin-top: 25px;
+        position: relative;
+        border: 3px solid var(--color-bg-secondary);
+        transition: .8s ease-in-out;
+    }
+   
+        .portfolio_images img {
+            width: 100%;
+        }
+
+        .portfolio_button {
+            display: none !important;
+            position: absolute;
+            bottom: 0;
+            background: var(--color-bg-secondary);
+            width: 100%;
+            height: 20%;
+            
+            
+           
+        }
+        .portfolio_images:hover .portfolio_button{
+            display: flex !important;
+            justify-content: space-around;
+        }
+        .btn {
+            width: 30%;
+        }
+
+        
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    .active h3 {
+        transform-origin: 0 0;
+         transform: rotate(-90deg); 
+     }
+      h3{
+         transform-origin: 0 0;
+         transform: rotate(0deg);
+        
+     }
+
+.graphic img{
+    width: 22px !important;
+    margin-right: 40px;
+}
+/* typography */
+h3 {
+    text-align: center;
+    font-size: 18px;
+}
+h4 {
+    font-size: 32px;
+}
+h5 {
+    font-size: 20px;
+    /* margin-top: .357em; 5px */
+}
+p {
+    font-size: var(--font-size-s-factor);
+}
+code {
+    font-size: 14px;
+}
+/* sections */
+.titles { 
+transform: rotate(00deg);
+}
+.titles {
+    margin-left: 45px;
+}
+.titles h4::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-bg-primary);
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    
+}
+.titles h4 {
+    font-size: 48px;
+}
+
+.about article {
+    width: 95%;
+}
+.about p {
+    font-size: 18px;
+}
+.skills_icons {
+    margin-top: 30px;
+}
+.skill img {
+    width: 32px;
+    margin-left: 25px;  
+}
+.icons {
+    margin-top: 70%;
+}
+.main {
+    margin-left: -10%;;
+}
+    /* ----- DECOR */
+    
+    .cuadro {
+        width: 70px;
+        height: 70px;
+        
+    }
+    .cuadro::after {
+        content: "";
+        width: 60px;
+        height: 60px;
+       
+    }
+    /* BLOCK 3: GREY PLANEL */
+    .portfolio_header {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+        .portfolio_header button {
+            width: 30%;
+            font-size: var(--font-size-s-factor);
+            padding: 5px 0;
+        }
+        .portfolio_flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;;
+            justify-content: space-around;
+        }
+        .portfolio_images {
+            width: 45%;
+        }
+    
+  
+}
+
+@media (min-width: 1024px) {
+    .icons {
+       margin-right: -30px;
+    }
+    .graphic img {
+        width: 20px !important;
+    }
+    /* .titles { 
+        transform: rotate(-90deg) translateY(-120px);
+        } */
+        .titles h4 {
+            font-size: 64px;
+        }
+        .titles h5 {
+        font-size: 28px;
+        }
+        .portfolio_images {
+            width: 30%;
+        }
+}
+
+
