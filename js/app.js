@@ -117,5 +117,106 @@ const displayForm =`
        });
 
     // ------------------------------------------->
-
+      
+    // FUNCTION TO DISPLAY PROJECTS
     
+    function displayProjects (img) {
+      const image =`
+      <div class="portfolio_images">
+      <img src="images/${img}.jpg">
+        <div class="portfolio_button">
+          <button class="btn_info">Info</button>
+          <button class="btn_life">Life</button>
+        </div> 
+      `;
+      const portfolio = document.querySelector('.portfolio_flex');
+            // making the projects visible
+       portfolio.innerHTML += image;
+      
+      return image;
+    }
+    displayProjects('project01');
+    displayProjects('project02');
+    displayProjects('project03');
+    displayProjects('project04');
+    displayProjects('project05');
+    displayProjects('project06');
+    displayProjects('project07');
+    displayProjects('project08');
+    displayProjects('project-A');
+    displayProjects('project-B');
+    displayProjects('project-C');
+    displayProjects('project-D');
+
+    // Display each project information
+const projectBack = document.querySelector('.project-close');
+const portfolio = document.querySelector('.portfolio');
+const modal_project = document.querySelector('#modal_project')
+const btnInfo = document.querySelector('.btn_info');
+
+      // displays the info on click
+      const portfolioImages = document.querySelector('.portfolio');
+      portfolioImages.addEventListener('click', (e) => {
+        console.log(e.target);
+        if (e.target.className === 'btn_info') {
+          portfolio.style.display = 'none';
+         modal_project.style.display = 'block';
+        }
+          })
+
+      
+      // goes back on click
+      projectBack.addEventListener('click', () => {
+        modal_project.style.display = 'none';
+        portfolio.style.display = 'block';
+        })
+      // Function to display info for each project
+      
+  function displayProject (img, name, description, tech1, tech2) {
+    const project =`
+   
+        
+            <div class="projectPhoto">
+                <img src="images/${img}.jpg">
+            </div>
+            <div class="info">
+                <ul>
+                    <li><code>const project = {</code></li>
+                    <li><code>'name': '${name}',</code></li>
+                    <li><code>'description': '${description}',</code></li>
+                    <li><code>'technologies': ['${tech1}', '${tech2}']</code></li>
+                    <li><code>};</code></li>
+                </ul>
+            </div>
+    </div>
+    `;
+
+          // making the projects visible
+     const projectFlex = document.querySelector('.projectFlex');
+     projectFlex.innerHTML = project;
+    
+    return project;
+  }
+    displayProject('project01', 'my first personal page', 'customize a personal online profile by adding graphics and text to improve the look of a web page','html', 'css');
+
+    displayProject('project02', 'mobile-first responsive layout', 'create a mobile-first web with a layout that adjusts to fit any screen size','html', 'css');
+
+    displayProject('project03', 'registration form', 'create a responsive registration form using a variety of form elements','html', 'css');
+
+    displayProject('project04', 'web style', 'create a style guide for Bootstrap','html', 'sass');
+
+    displayProject('project05', 'interactive photo gallery', 'create an interactive photo gallery and adding a searcheable input bar','css', 'javascript');
+
+    displayProject('project06', 'game show app', 'create a browser version of Wheel of Success game','css', 'javascript');
+
+    displayProject('project07', 'dashboard', 'creating tables - charts - graphics and other user interface components','css', 'javascript');
+
+    displayProject('project08', 'employee directory', 'create an employee directory by communication with an API','css', 'javascript');
+
+    displayProject('project-A', 'momentum', 'create an online responsive form','html', 'css');
+
+    displayProject('project-B', 'adoption website', 'create a pets adoption website with forms and SVGs','html', 'css');
+
+    displayProject('project-C', 'social media challenge', 'recreate a social media page by using SVGs images','html', 'sass');
+
+    displayProject('project-D', 'IOS settings', 'recreate the popular ios settings app by using flexbox','html', 'css');
