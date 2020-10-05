@@ -1,3 +1,88 @@
+  
+const projects = [
+  {
+  image : "project01",
+  title: "my first personal page",
+  description: "customize a personal online profile by adding graphics and text to improve the look of a web page",
+  technologies: "['html', 'css']",
+},
+
+{
+  image : "project02",
+  title: "mobile-first responsive layout",
+  description: "create a mobile-first web with a layout that adjusts to fit any screen size",
+  technologies: "['html', 'css']"
+},
+
+{
+  image : "project03",
+  title: "registration form",
+  description: "create a responsive registration form using a variety of form     elements",  
+  technologies: "['html', 'css']"
+},
+{
+  image: "project04",
+  title: "web style",
+  description: "create a style guide for Bootstrap",  
+  technologies: "['html', 'sass']"
+},
+
+{
+  image: "project05",
+  title: "interactive photo gallery",
+  description: "create an interactive photo gallery and adding a searcheable input bar",  
+  technologies: "['html', 'cssss', 'javascript]"
+},
+
+{
+  image: "project06",
+  title: "game show app",
+  description: "create a browser version of Wheel of Success game",  
+  technologies: "['html', 'cssss', 'javascript]"
+},
+
+{
+  image: "project07",
+  title: "dashboard",
+  description: "creating tables, charts, graphics and other user interface components",  
+  technologies: "['html', 'cssss', 'javascript']"
+},
+{
+  image: "project08",
+  title: "employee directory",
+  description: "create an employee directory by communication with an API",  
+  technologies: "['html', 'cssss', 'javascript']"
+},
+{
+  image: "project-A",
+  title: "momentum",
+  description: "create an online responsive form",  
+  technologies: "['html', 'csss']"
+},
+
+{
+  image: "project-B",
+  title: "adoption website",
+  description: "create a pets adoption website with forms and SVGs",  
+  technologies: "['html', 'csss']"
+},
+
+{
+  image: "project-C",
+  title: "social media challenge",
+  description: "recreate a social media page by using SVGs images",  
+  technologies: "['html', 'csss']"
+},
+
+{
+  image: "project-D",
+  title: "IOS app",
+  description: "recreate the popular ios settings app by using flexbox",  
+  technologies: "['html', 'csss']"
+},
+]
+
+
 
 // Active classes to achieve: 
 // --- opening/closing panels
@@ -119,34 +204,24 @@ const displayForm =`
     // ------------------------------------------->
       
     // FUNCTION TO DISPLAY PROJECTS
-    
-    function displayProjects (img) {
-      const image =`
-      <div class="portfolio_images">
-      <img src="images/${img}.jpg">
-        <div class="portfolio_button">
-          <button class="btn_info">Info</button>
-          <button class="btn_life">Life</button>
-        </div> 
-      `;
-      const portfolio = document.querySelector('.portfolio_flex');
-            // making the projects visible
-       portfolio.innerHTML += image;
-      
-      return image;
+    function displayProjects() {
+      const portfolio = document.querySelector(".portfolio_flex");
+      let projectHTML = "";
+      projects.forEach((project, i) => {
+        projectHTML += `
+        <div class="portfolio_images" data-index="${i}">
+        <img src="images/${project.image}.jpg">
+          <div class="portfolio_button">
+            <button class="btn_info">Info</button>
+            <button class="btn_life">Life</button>
+          </div> 
+          </div>
+        `;
+      });
+      // making the projects visible
+      portfolio.innerHTML = projectHTML;
     }
-    displayProjects('project01');
-    displayProjects('project02');
-    displayProjects('project03');
-    displayProjects('project04');
-    displayProjects('project05');
-    displayProjects('project06');
-    displayProjects('project07');
-    displayProjects('project08');
-    displayProjects('project-A');
-    displayProjects('project-B');
-    displayProjects('project-C');
-    displayProjects('project-D');
+    displayProjects();
 
     // Display each project information
 const projectBack = document.querySelector('.project-close');
@@ -161,6 +236,7 @@ const btnInfo = document.querySelector('.btn_info');
         if (e.target.className === 'btn_info') {
           portfolio.style.display = 'none';
          modal_project.style.display = 'block';
+         displayProject(e.target.parentNode.parentNode.dataset.index);
         }
           })
 
@@ -170,53 +246,28 @@ const btnInfo = document.querySelector('.btn_info');
         modal_project.style.display = 'none';
         portfolio.style.display = 'block';
         })
-      // Function to display info for each project
-      
-  function displayProject (img, name, description, tech1, tech2) {
-    const project =`
-   
-        
-            <div class="projectPhoto">
-                <img src="images/${img}.jpg">
-            </div>
-            <div class="info">
-                <ul>
-                    <li><code>const project = {</code></li>
-                    <li><code>'name': '${name}',</code></li>
-                    <li><code>'description': '${description}',</code></li>
-                    <li><code>'technologies': ['${tech1}', '${tech2}']</code></li>
-                    <li><code>};</code></li>
-                </ul>
-            </div>
-    </div>
-    `;
+     
 
-          // making the projects visible
-     const projectFlex = document.querySelector('.projectFlex');
-     projectFlex.innerHTML = project;
-    
-    return project;
-  }
-    displayProject('project01', 'my first personal page', 'customize a personal online profile by adding graphics and text to improve the look of a web page','html', 'css');
-
-    displayProject('project02', 'mobile-first responsive layout', 'create a mobile-first web with a layout that adjusts to fit any screen size','html', 'css');
-
-    displayProject('project03', 'registration form', 'create a responsive registration form using a variety of form elements','html', 'css');
-
-    displayProject('project04', 'web style', 'create a style guide for Bootstrap','html', 'sass');
-
-    displayProject('project05', 'interactive photo gallery', 'create an interactive photo gallery and adding a searcheable input bar','css', 'javascript');
-
-    displayProject('project06', 'game show app', 'create a browser version of Wheel of Success game','css', 'javascript');
-
-    displayProject('project07', 'dashboard', 'creating tables - charts - graphics and other user interface components','css', 'javascript');
-
-    displayProject('project08', 'employee directory', 'create an employee directory by communication with an API','css', 'javascript');
-
-    displayProject('project-A', 'momentum', 'create an online responsive form','html', 'css');
-
-    displayProject('project-B', 'adoption website', 'create a pets adoption website with forms and SVGs','html', 'css');
-
-    displayProject('project-C', 'social media challenge', 'recreate a social media page by using SVGs images','html', 'sass');
-
-    displayProject('project-D', 'IOS settings', 'recreate the popular ios settings app by using flexbox','html', 'css');
+              // making the projects visible
+              function displayProject(index) {
+                const project = `
+                          <div class="projectPhoto">
+                              <img src="images/${projects[index].image}.jpg">
+                          </div>
+                          <div class="info">
+                              <ul>
+                                  <li><code>const project = {</code></li>
+                                  <li><code>'name': '${projects[index].title}',</code></li>
+                                  <li><code>'description': '${projects[index].description}',</code></li>
+                                  <li><code>'technologies': ${projects[index].technologies}</code></li>
+                                  <li><code>};</code></li>
+                              </ul>
+                          </div>
+                  </div>
+                  `;
+                // making the projects visible
+                const projectFlex = document.querySelector(".projectFlex");
+                projectFlex.innerHTML = project;
+                return project;
+              }
+  
