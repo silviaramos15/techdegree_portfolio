@@ -2,83 +2,103 @@
 const projects = [
   {
   image : "project01",
+  imageSmall: "p01",
   title: "my first personal page",
   description: "customize a personal online profile by adding graphics and text to improve the look of a web page",
   technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/techdegree-project1/"
 },
 
 {
   image : "project02",
+  imageSmall: "p02",
   title: "mobile-first responsive layout",
   description: "create a mobile-first web with a layout that adjusts to fit any screen size",
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/techdegree-project2/"
 },
 
 {
   image : "project03",
+  imageSmall: "p03",
   title: "registration form",
   description: "create a responsive registration form using a variety of form     elements",  
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/techdegree-project3/"
 },
 {
   image: "project04",
+  imageSmall: "p04",
   title: "web style",
   description: "create a style guide for Bootstrap",  
-  technologies: "['html', 'sass']"
+  technologies: "['html', 'sass']",
+  url: "https://silviaramos15.github.io/techdegree-project4/"
 },
 
 {
   image: "project05",
+  imageSmall: "p05",
   title: "interactive photo gallery",
   description: "create an interactive photo gallery and adding a searcheable input bar",  
-  technologies: "['html', 'cssss', 'javascript]"
+  technologies: "['html', 'css', 'javascript]",
+  url: "https://silviaramos15.github.io/techdegree-project5/"
 },
 
 {
   image: "project06",
+  imageSmall: "p06",
   title: "game show app",
   description: "create a browser version of Wheel of Success game",  
-  technologies: "['html', 'cssss', 'javascript]"
+  technologies: "['html', 'css', 'javascript]",
+  url: "https://silviaramos15.github.io/techdegree-project6/"
 },
 
 {
   image: "project07",
+  imageSmall: "p07",
   title: "dashboard",
   description: "creating tables, charts, graphics and other user interface components",  
-  technologies: "['html', 'cssss', 'javascript']"
+  technologies: "['html', 'css', 'javascript']",
+  url: "https://silviaramos15.github.io/techdegree-project7/"
 },
 {
   image: "project08",
+  imageSmall: "p08",
   title: "employee directory",
   description: "create an employee directory by communication with an API",  
-  technologies: "['html', 'cssss', 'javascript']"
+  technologies: "['html', 'css', 'javascript']",
+  url: "https://silviaramos15.github.io/techdegree-project8/"
 },
 {
   image: "project-A",
+  imageSmall: "pa",
   title: "momentum",
   description: "create an online responsive form",  
-  technologies: "['html', 'csss']"
+  technologies: "['html', 'css']"
 },
 
 {
   image: "project-B",
+  imageSmall: "pb",
   title: "adoption website",
   description: "create a pets adoption website with forms and SVGs",  
-  technologies: "['html', 'csss']"
+  technologies: "['html', 'css']"
 },
 
 {
   image: "project-C",
+  imageSmall: "pc",
   title: "social media challenge",
   description: "recreate a social media page by using SVGs images",  
-  technologies: "['html', 'csss']"
+  technologies: "['html', 'css']"
 },
 
 {
   image: "project-D",
+  imageSmall: "pd",
   title: "IOS app",
   description: "recreate the popular ios settings app by using flexbox",  
-  technologies: "['html', 'csss']"
+  technologies: "['html', 'css']"
 },
 ]
 
@@ -169,14 +189,14 @@ const modalForm = document.querySelector('.modal-content_form');
 const displayForm =`
 <div class="form-container">
 <h2 class="h2Form">Do not be shy and say hi!<h2>
-<form method="post" action="send_mail.php">
+<form method="post" action="contact.php">
 <div class="flex-form">
-<label for="name">Name:</label>
- <input type="text" id="name" name="user_name" placeholder="Required" required>
+<label for="sender">Name:</label>
+ <input type="text" id="sender" name="user_name" placeholder="Required" required>
  </div>
  <div class="flex-form">
- <label for="email">Email Address:</label>
- <input type="email" id="email" name="user_email" placeholder="Required" required>
+ <label for="senderEmail">Email Address:</label>
+ <input type="email" id="senderEmail" name="user_email" placeholder="Required" required>
  </div>
  <div class="flex-form">
 <label for="message" class="form-description">Message:</label>
@@ -213,7 +233,6 @@ const displayForm =`
         <img src="images/${project.image}.jpg">
           <div class="portfolio_button">
             <button class="btn_info">Info</button>
-            <button class="btn_life">Life</button>
           </div> 
           </div>
         `;
@@ -251,15 +270,18 @@ const btnInfo = document.querySelector('.btn_info');
               // making the projects visible
               function displayProject(index) {
                 const project = `
+                          
                           <div class="projectPhoto">
-                              <img src="images/${projects[index].image}.jpg">
+                              <img src="images/${projects[index].imageSmall}.png">
                           </div>
+                         
                           <div class="info">
                               <ul>
                                   <li><code>const project = {</code></li>
                                   <li><code>'name': '${projects[index].title}',</code></li>
                                   <li><code>'description': '${projects[index].description}',</code></li>
                                   <li><code>'technologies': ${projects[index].technologies}</code></li>
+                                  <li><code>'url': '<a class="link" href="${projects[index].url}"target="_blank">click me and go live<a>'</code></li>
                                   <li><code>};</code></li>
                               </ul>
                           </div>
