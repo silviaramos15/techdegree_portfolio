@@ -40,7 +40,7 @@ const projects = [
   imageSmall: "p05",
   title: "interactive photo gallery",
   description: "create an interactive photo gallery and adding a searcheable input bar",  
-  technologies: "['html', 'css', 'javascript]",
+  technologies: "['html', 'css', 'javascript']",
   url: "https://silviaramos15.github.io/techdegree-project5/"
 },
 
@@ -59,7 +59,7 @@ const projects = [
   title: "dashboard",
   description: "creating tables, charts, graphics and other user interface components",  
   technologies: "['html', 'css', 'javascript']",
-  url: "https://silviaramos15.github.io/techdegree-project7/"
+  url: "https://silviaramos15.github.io/techdegree-project07/"
 },
 {
   image: "project08",
@@ -74,7 +74,8 @@ const projects = [
   imageSmall: "pa",
   title: "momentum",
   description: "create an online responsive form",  
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/momentum-master"
 },
 
 {
@@ -82,7 +83,8 @@ const projects = [
   imageSmall: "pb",
   title: "adoption website",
   description: "create a pets adoption website with forms and SVGs",  
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/paws/"
 },
 
 {
@@ -90,7 +92,8 @@ const projects = [
   imageSmall: "pc",
   title: "social media challenge",
   description: "recreate a social media page by using SVGs images",  
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/social-challenge/"
 },
 
 {
@@ -98,7 +101,8 @@ const projects = [
   imageSmall: "pd",
   title: "IOS app",
   description: "recreate the popular ios settings app by using flexbox",  
-  technologies: "['html', 'css']"
+  technologies: "['html', 'css']",
+  url: "https://silviaramos15.github.io/ios-settings/"
 },
 ]
 
@@ -127,17 +131,13 @@ const intro = document.querySelector('.intro');
 const skills = document.querySelector('.skills');
 
 arrowRight.addEventListener('click', () => {
-intro.style.display = 'none';
-skills.style.display = 'block';
-arrowRight.style.display = 'none';
-arrowleft.style.display = 'inline-block';
+article(intro, skills);
+arrows(arrowRight, arrowleft);
 })
 
 arrowleft.addEventListener('click', () => {
-intro.style.display = 'block';
-skills.style.display = 'none';
-arrowRight.style.display = 'inline-block';
-arrowleft.style.display = 'none';
+  article(skills, intro);
+  arrows(arrowleft, arrowRight);
 })
 // --------------------
   // building the overlay modal for the inner HTML 
@@ -149,6 +149,29 @@ const modalClose = document.querySelector('.modal-close')
     modalClose.addEventListener('click', () => {
       overlay.classList.add('hidden');
     });
+
+// Display facts 
+const me = document.querySelector('#me');
+const facts = document.querySelector('.me');
+const arrow = document.querySelector('.leftMe');
+me.addEventListener('click', () => {
+    article(intro, facts);
+    arrows(arrowRight, arrow);
+})
+arrow.addEventListener('click', () => {
+  article(facts, intro);
+  arrowRight.style.display = 'inline-block';
+})
+// function to display/hide articles
+function article (art1, art2) {
+art1.style.display = 'none';
+art2.style.display = 'block';
+}
+// function to display arrows
+function arrows (arr1, arr2) {
+  arr1.style.display = 'none';
+ arr2.style.display = 'inline-block';
+}
 
     // FUNCTION TO DISPLAY INFO 
 
