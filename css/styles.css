@@ -33,12 +33,13 @@ img {
 /* TYPOGRAPHY */
 h1,
 h5,
-h3 {
+h3,
+h4 {
     font-family: var(--font-family-main);
 }
 h3 {
     width: 3.125em; /*50px*/
-    align-self: left;
+    align: left;
     text-transform: uppercase;
     font-size: .875em; /*14px*/
     margin: 0 0 2px 3px;
@@ -240,7 +241,9 @@ font-size: 2em; /*32px*/
    
 }
 .intro h4 span{
-    border-bottom: 1px solid black;
+    font-style: italic;
+    /* color: #FFDAB9; */
+    
 }
 .intro p span {
 font-style: italic;
@@ -313,7 +316,7 @@ font-style: italic;
         padding-left: 10px;
     }
     .intro a {
-        text-decoration: none;
+        /* text-decoration: none; */
         color: black;
     }
 
@@ -468,6 +471,9 @@ form button {
         }
         .btn {
             width: 30%;
+        }
+        .link {
+            text-decoration: underline;
         }
 /* MODAL CONTAINER GREY AREA */
 

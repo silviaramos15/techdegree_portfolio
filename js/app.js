@@ -104,7 +104,7 @@ const projects = [
   technologies: "['html', 'css']",
   url: "https://silviaramos15.github.io/ios-settings/"
 },
-]
+];
 
 
 
@@ -133,17 +133,17 @@ const skills = document.querySelector('.skills');
 arrowRight.addEventListener('click', () => {
 article(intro, skills);
 arrows(arrowRight, arrowleft);
-})
+});
 
 arrowleft.addEventListener('click', () => {
   article(skills, intro);
   arrows(arrowleft, arrowRight);
-})
+});
 // --------------------
   // building the overlay modal for the inner HTML 
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
-const modalClose = document.querySelector('.modal-close')
+const modalClose = document.querySelector('.modal-close');
 
   // Close the modal
     modalClose.addEventListener('click', () => {
@@ -157,11 +157,11 @@ const arrow = document.querySelector('.leftMe');
 me.addEventListener('click', () => {
     article(intro, facts);
     arrows(arrowRight, arrow);
-})
+});
 arrow.addEventListener('click', () => {
   article(facts, intro);
   arrowRight.style.display = 'inline-block';
-})
+});
 // function to display/hide articles
 function article (art1, art2) {
 art1.style.display = 'none';
@@ -212,7 +212,7 @@ const modalForm = document.querySelector('.modal-content_form');
 const displayForm =`
 <div class="form-container">
 <h2 class="h2Form">Do not be shy and say hi!<h2>
-<form method="post" action="contact.php">
+<form method="post" action="https://formspree.io/f/mvovzqlo">
 <div class="flex-form">
 <label for="sender">Name:</label>
  <input type="text" id="sender" name="user_name" placeholder="Required" required>
@@ -268,7 +268,7 @@ const displayForm =`
     // Display each project information
 const projectBack = document.querySelector('.project-close');
 const portfolio = document.querySelector('.portfolio');
-const modal_project = document.querySelector('#modal_project')
+const modal_project = document.querySelector('#modal_project');
 const btnInfo = document.querySelector('.btn_info');
 
       // displays the info on click
@@ -280,7 +280,7 @@ const btnInfo = document.querySelector('.btn_info');
          modal_project.style.display = 'block';
          displayProject(e.target.parentNode.parentNode.dataset.index);
         }
-          })
+          });
 
       
       // goes back on click
