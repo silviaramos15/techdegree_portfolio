@@ -299,7 +299,7 @@ font-style: italic;
     .skill img {
         width: 1em; /*16px*/
         margin-left: .625em; /*10px*/
-        cursor: pointer;
+        cursor: zoom-in;
         transition: .5s ease-in-out;
     }
     .skill img:hover {
